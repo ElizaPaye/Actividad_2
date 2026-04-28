@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+{% block title %}Formulario de Inscripción — EventosBOL{% endblock %}
+
+{% block content %}
+
+<!-- PAGE HEADER -->
+<section class="page-header text-white text-center d-flex align-items-center">
+    <div class="hero-overlay"></div>
+    <div class="container position-relative">
+        <h1 class="display-4 fw-bold">Formulario de <span class="text-accent">Inscripción</span></h1>
+        <p class="lead opacity-75">Completa tus datos y asegura tu lugar</p>
+    </div>
+</section>
+
+<!-- FORMULARIO -->
+<section class="py-6 bg-light-custom">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="form-card">
+                    <div class="form-card-header text-center mb-4">
+                        <div class="form-icon"><i class="fas fa-clipboard-list"></i></div>
+                        <h3 class="mt-3 fw-bold">Datos de Inscripción</h3>
+                        <p class="text-muted">Los campos con <span class="text-danger">*</span> son obligatorios</p>
+                    </div>
+
+                    <form action="{{ url_for('inscripcion') }}" method="POST" novalidate>
+
+                        <div class="row g-3">
+                            <!-- Nombre -->
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">
+                                    <i class="fas fa-user me-1 text-accent"></i>Nombre Completo <span class="text-danger">*</span>
+                                </label>
+                                <input type="text" name="nombre" class="form-control form-control-custom"
+                                       placeholder="Ej: Juan Pérez" required>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">
+                                    <i class="fas fa-envelope me-1 text-accent"></i>Correo Electrónico <span class="text-danger">*</span>
+                                </label>
+                                <input type="email" name="email" class="form-control form-control-custom"
+                                       placeholder="tu@email.com" required>
+                            </div>
+
+                            <!-- Teléfono -->
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">
+                                    <i class="fas fa-phone me-1 text-accent"></i>Teléfono / Celular
+                                </label>
+                                <input type="tel" name="telefono" class="form-control form-control-custom"
+                                       placeholder="+591 XXXXXXXX">
+                            </div>
+
+                            <!-- Edad -->
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">
+                                    <i class="fas fa-birthday-cake me-1 text-accent"></i>Edad
+                                </label>
+                                <input type="number" name="edad" class="form-control form-control-custom"
+                                       placeholder="Ej: 22" min="10" max="100">
+                            </div>
+
+                            <!-- Evento -->
+                            <div class="col-12">
+                                <label class="form-label fw-semibold">
+                                    <i class="fas fa-calendar-check me-1 text-accent"></i>Evento al que desea inscribirse <span class="text-danger">*</span>
+                                </label>
+                                <select name="evento" class="form-select form-control-custom" required>
+                                    <option value="" disabled selected>-- Selecciona un evento --</option>
+                                    <option value="Conferencia de Innovación Tech 2025">🖥️ Conferencia de Innovación Tech 2025 — 15 Ago | Gratuito</option>
+                                    <option value="Festival de Música Andina Fusión">🎵 Festival de Música Andina Fusión — 22 Sep | Bs. 50</option>
+                                    <option value="Workshop de Emprendimiento 2025">🚀 Workshop de Emprendimiento 2025 — 10 Oct | Bs. 150</option>
+                                </select>
+                            </div>
+
+                            <!-- Mensaje -->
+                            <div class="col-12">
+                                <label class="form-label fw-semibold">
+                                    <i class="fas fa-comment me-1 text-accent"></i>Mensaje o consulta adicional
+                                </label>
+                                <textarea name="mensaje" class="form-control form-control-custom" rows="4"
+                                          placeholder="¿Tienes alguna pregunta o necesidad especial? Escríbela aquí..."></textarea>
+                            </div>
+
+                            <!-- Checkbox términos -->
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="terminos" required>
+                                    <label class="form-check-label text-muted" for="terminos">
+                                        Acepto los <a href="#" class="text-accent">términos y condiciones</a> del evento y autorizo el uso de mis datos.
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Botón submit -->
+                            <div class="col-12 mt-2">
+                                <button type="submit" class="btn btn-accent btn-lg w-100 submit-btn">
+                                    <i class="fas fa-paper-plane me-2"></i>Confirmar Inscripción
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Info adicional -->
+                <div class="row g-3 mt-3">
+                    <div class="col-md-4">
+                        <div class="info-pill text-center">
+                            <i class="fas fa-lock text-accent"></i>
+                            <span>Datos seguros</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="info-pill text-center">
+                            <i class="fas fa-envelope text-accent"></i>
+                            <span>Confirmación por email</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="info-pill text-center">
+                            <i class="fas fa-undo text-accent"></i>
+                            <span>Cancelación gratuita</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+{% block title %}EventosBOL 2025 — Inicio{% endblock %}
+
+{% block content %}
+
+<!-- HERO SECTION -->
+<section class="hero-section d-flex align-items-center">
+    <div class="hero-overlay"></div>
+    <div class="container position-relative text-white text-center">
+        <span class="badge-pill mb-3">🔥 Temporada 2025</span>
+        <h1 class="hero-title">Los Mejores<br><span class="text-accent">Eventos</span> de Bolivia</h1>
+        <p class="hero-subtitle">Tecnología · Música · Negocios · Arte</p>
+        <p class="lead mb-5 mx-auto" style="max-width: 550px; opacity: 0.85;">
+            Descubre experiencias únicas, conecta con personas increíbles y crea recuerdos que duran toda la vida.
+        </p>
+        <div class="d-flex gap-3 justify-content-center flex-wrap">
+            <a href="{{ url_for('eventos') }}" class="btn btn-accent btn-lg px-5">Ver Eventos</a>
+            <a href="{{ url_for('inscripcion') }}" class="btn btn-outline-light btn-lg px-5">Inscribirme</a>
+        </div>
+    </div>
+</section>
+
+<!-- ESTADÍSTICAS -->
+<section class="stats-section py-5">
+    <div class="container">
+        <div class="row g-4 text-center">
+            <div class="col-6 col-md-3">
+                <div class="stat-card">
+                    <div class="stat-number">3+</div>
+                    <div class="stat-label">Eventos</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-card">
+                    <div class="stat-number">800+</div>
+                    <div class="stat-label">Cupos disponibles</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-card">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Speakers</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-card">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Ciudades</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- EVENTOS DESTACADOS -->
+<section class="py-6 bg-light-custom">
+    <div class="container">
+        <div class="section-header text-center mb-5">
+            <span class="section-tag">Próximamente</span>
+            <h2 class="section-title">Eventos <span class="text-accent">Destacados</span></h2>
+            <p class="text-muted">No te pierdas ninguna experiencia</p>
+        </div>
+        <div class="row g-4">
+            <!-- Card 1 -->
+            <div class="col-md-4">
+                <div class="event-card">
+                    <div class="event-card-img" style="background: linear-gradient(135deg, #1a1a2e, #16213e);">
+                        <i class="fas fa-laptop-code event-icon"></i>
+                        <span class="event-badge">Gratuito</span>
+                    </div>
+                    <div class="event-card-body">
+                        <span class="event-category">Tecnología</span>
+                        <h5>Conferencia de Innovación Tech 2025</h5>
+                        <p class="text-muted small">Speakers internacionales y talleres prácticos en La Paz.</p>
+                        <div class="event-meta">
+                            <span><i class="fas fa-calendar me-1 text-accent"></i>15 Agosto 2025</span>
+                            <span><i class="fas fa-map-pin me-1 text-accent"></i>La Paz</span>
+                        </div>
+                        <a href="{{ url_for('inscripcion') }}" class="btn btn-accent w-100 mt-3">Inscribirme</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="col-md-4">
+                <div class="event-card featured">
+                    <div class="event-card-img" style="background: linear-gradient(135deg, #6b21a8, #a855f7);">
+                        <i class="fas fa-music event-icon"></i>
+                        <span class="event-badge">Bs. 50</span>
+                    </div>
+                    <div class="event-card-body">
+                        <span class="event-category">Música</span>
+                        <h5>Festival de Música Andina Fusión</h5>
+                        <p class="text-muted small">Una noche mágica de ritmos andinos con música contemporánea.</p>
+                        <div class="event-meta">
+                            <span><i class="fas fa-calendar me-1 text-accent"></i>22 Sep 2025</span>
+                            <span><i class="fas fa-map-pin me-1 text-accent"></i>La Paz</span>
+                        </div>
+                        <a href="{{ url_for('inscripcion') }}" class="btn btn-accent w-100 mt-3">Inscribirme</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="col-md-4">
+                <div class="event-card">
+                    <div class="event-card-img" style="background: linear-gradient(135deg, #065f46, #10b981);">
+                        <i class="fas fa-rocket event-icon"></i>
+                        <span class="event-badge">Bs. 150</span>
+                    </div>
+                    <div class="event-card-body">
+                        <span class="event-category">Negocios</span>
+                        <h5>Workshop de Emprendimiento 2025</h5>
+                        <p class="text-muted small">Valida tu idea con inversionistas reales del ecosistema boliviano.</p>
+                        <div class="event-meta">
+                            <span><i class="fas fa-calendar me-1 text-accent"></i>10 Oct 2025</span>
+                            <span><i class="fas fa-map-pin me-1 text-accent"></i>La Paz</span>
+                        </div>
+                        <a href="{{ url_for('inscripcion') }}" class="btn btn-accent w-100 mt-3">Inscribirme</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-5">
+            <a href="{{ url_for('eventos') }}" class="btn btn-outline-dark btn-lg px-5">Ver todos los eventos</a>
+        </div>
+    </div>
+</section>
+
+<!-- POR QUÉ ELEGIRNOS -->
+<section class="py-6">
+    <div class="container">
+        <div class="section-header text-center mb-5">
+            <span class="section-tag">¿Por qué nosotros?</span>
+            <h2 class="section-title">La experiencia que <span class="text-accent">mereces</span></h2>
+        </div>
+        <div class="row g-4 text-center">
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h5>Seguridad Garantizada</h5>
+                    <p class="text-muted">Todos nuestros eventos cuentan con medidas de seguridad y protocolos de emergencia.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-star"></i></div>
+                    <h5>Calidad Premium</h5>
+                    <p class="text-muted">Speakers, artistas y expertos de primer nivel nacional e internacional.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-users"></i></div>
+                    <h5>Gran Comunidad</h5>
+                    <p class="text-muted">Únete a miles de bolivianos que ya son parte de nuestra comunidad de eventos.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-section py-6 text-white text-center">
+    <div class="container">
+        <h2 class="display-5 fw-bold mb-3">¿Listo para vivir la experiencia?</h2>
+        <p class="lead mb-5 opacity-75">Asegura tu lugar antes de que se agoten los cupos</p>
+        <a href="{{ url_for('inscripcion') }}" class="btn btn-light btn-lg px-6 text-dark fw-bold">¡Inscríbete Ahora!</a>
+    </div>
+</section>
+
+{% endblock %}

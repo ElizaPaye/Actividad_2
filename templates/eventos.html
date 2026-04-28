@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Eventos 2025 — EventosBOL{% endblock %}
+
+{% block content %}
+
+<!-- PAGE HEADER -->
+<section class="page-header text-white text-center d-flex align-items-center">
+    <div class="hero-overlay"></div>
+    <div class="container position-relative">
+        <h1 class="display-4 fw-bold">Todos los <span class="text-accent">Eventos</span></h1>
+        <p class="lead opacity-75">Encuentra el evento perfecto para ti</p>
+    </div>
+</section>
+
+<!-- EVENTOS GRID -->
+<section class="py-6">
+    <div class="container">
+        <div class="row g-4">
+            {% for evento in eventos %}
+            <div class="col-lg-4 col-md-6">
+                <div class="event-card-full">
+                    <div class="ecf-header">
+                        <span class="ecf-category">{{ evento.categoria }}</span>
+                        <span class="ecf-price">{{ evento.precio }}</span>
+                    </div>
+                    <div class="ecf-body">
+                        <h4>{{ evento.nombre }}</h4>
+                        <p class="text-muted">{{ evento.descripcion }}</p>
+                        <ul class="ecf-details list-unstyled">
+                            <li><i class="fas fa-calendar-alt text-accent me-2"></i>{{ evento.fecha }}</li>
+                            <li><i class="fas fa-clock text-accent me-2"></i>{{ evento.hora }}</li>
+                            <li><i class="fas fa-map-marker-alt text-accent me-2"></i>{{ evento.lugar }}</li>
+                            <li><i class="fas fa-users text-accent me-2"></i>{{ evento.cupos }} cupos disponibles</li>
+                        </ul>
+                        <a href="{{ url_for('inscripcion') }}" class="btn btn-accent w-100 mt-2">
+                            <i class="fas fa-ticket-alt me-2"></i>Inscribirme
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}
